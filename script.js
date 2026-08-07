@@ -9,7 +9,7 @@
         colors: {
           navy: '#071A33',
           navy2: '#0C2A52',
-          blue: '#0066FF',
+          blue: '#FF7A00',
           orange: '#FF7A00',
           bg: '#F8FAFC',
           dark: '#020617',
@@ -123,15 +123,27 @@
     counters.forEach((counter) => counterIO.observe(counter));
 
     const calcBtn = document.getElementById('calcBtn');
-    const estimateBox = document.getElementById('estimateBox');
-    const estimateValue = document.getElementById('estimateValue');
     const quoteForm = document.getElementById('quoteForm');
     const formMsg = document.getElementById('formMsg');
+    const weightInput = document.getElementById('weightInput')
+      || quoteForm?.querySelector('input[placeholder^="Weight"]');
+    const freightType = document.getElementById('freightType')
+      || quoteForm?.querySelector('select');
+    let estimateBox = document.getElementById('estimateBox');
+    let estimateValue = document.getElementById('estimateValue');
 
-    if (calcBtn) {
+    if (calcBtn && !estimateBox) {
+      estimateBox = document.createElement('div');
+      estimateBox.className = 'hidden rounded-lg border border-orange/30 bg-orange/10 px-4 py-4 text-center text-navy';
+      estimateBox.innerHTML = '<span class="block text-sm font-semibold">Estimated range:</span><span class="block mt-1 font-mono text-lg font-bold text-orange"></span>';
+      calcBtn.closest('div')?.after(estimateBox);
+      estimateValue = estimateBox.querySelector('span:last-child');
+    }
+
+    if (calcBtn && weightInput && freightType) {
       calcBtn.addEventListener('click', () => {
-        const w = parseFloat(document.getElementById('weightInput').value) || 24000;
-        const mult = parseFloat(document.getElementById('freightType').value) || 1;
+        const w = parseFloat(weightInput.value) || 24000;
+        const mult = parseFloat(freightType.value) || 1;
         const base = 850 + (w / 1000) * 38;
         const low = Math.round((base * mult * 0.92) / 5) * 5;
         const high = Math.round((base * mult * 1.18) / 5) * 5;
@@ -151,6 +163,18 @@
         e.preventDefault();
         if (formMsg) {
           formMsg.classList.remove('hidden');
+        }
+      });
+    }
+
+    const lastMileForm = document.getElementById('lastMileForm');
+    const lastMileFormMsg = document.getElementById('lastMileFormMsg');
+
+    if (lastMileForm) {
+      lastMileForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (lastMileFormMsg) {
+          lastMileFormMsg.classList.remove('hidden');
         }
       });
     }
@@ -219,21 +243,21 @@
       ];
 
       const routes = [
-        { coords: [[43.6532, -79.3832], [43.5890, -79.6441]], color: '#4F8CFF' },
-        { coords: [[43.6532, -79.3832], [45.5017, -73.5673]], color: '#4F8CFF' },
-        { coords: [[43.6532, -79.3832], [44.6488, -63.5752]], color: '#4F8CFF' },
-        { coords: [[43.6532, -79.3832], [42.3314, -83.0458], [41.8781, -87.6298]], color: '#4F8CFF' },
-        { coords: [[42.3314, -83.0458], [41.4993, -81.6944]], color: '#4F8CFF' },
-        { coords: [[43.6532, -79.3832], [40.7128, -74.0060], [39.9526, -75.1652]], color: '#4F8CFF' },
-        { coords: [[41.8781, -87.6298], [32.7767, -96.7970]], color: '#4F8CFF' },
-        { coords: [[32.7767, -96.7970], [33.7490, -84.3880]], color: '#4F8CFF' },
-        { coords: [[33.7490, -84.3880], [35.1495, -90.0490]], color: '#4F8CFF' },
-        { coords: [[35.1495, -90.0490], [39.7392, -104.9903]], color: '#4F8CFF' },
-        { coords: [[39.7392, -104.9903], [34.0522, -118.2437]], color: '#4F8CFF' },
-        { coords: [[34.0522, -118.2437], [33.4484, -112.0740]], color: '#4F8CFF' },
-        { coords: [[49.2827, -123.1207], [47.6062, -122.3321]], color: '#4F8CFF' },
-        { coords: [[51.0447, -114.0719], [53.5444, -113.4909]], color: '#4F8CFF' },
-        { coords: [[51.0447, -114.0719], [43.6532, -79.3832]], color: '#4F8CFF' },
+        { coords: [[43.6532, -79.3832], [43.5890, -79.6441]], color: '#FF7A00' },
+        { coords: [[43.6532, -79.3832], [45.5017, -73.5673]], color: '#FF7A00' },
+        { coords: [[43.6532, -79.3832], [44.6488, -63.5752]], color: '#FF7A00' },
+        { coords: [[43.6532, -79.3832], [42.3314, -83.0458], [41.8781, -87.6298]], color: '#FF7A00' },
+        { coords: [[42.3314, -83.0458], [41.4993, -81.6944]], color: '#FF7A00' },
+        { coords: [[43.6532, -79.3832], [40.7128, -74.0060], [39.9526, -75.1652]], color: '#FF7A00' },
+        { coords: [[41.8781, -87.6298], [32.7767, -96.7970]], color: '#FF7A00' },
+        { coords: [[32.7767, -96.7970], [33.7490, -84.3880]], color: '#FF7A00' },
+        { coords: [[33.7490, -84.3880], [35.1495, -90.0490]], color: '#FF7A00' },
+        { coords: [[35.1495, -90.0490], [39.7392, -104.9903]], color: '#FF7A00' },
+        { coords: [[39.7392, -104.9903], [34.0522, -118.2437]], color: '#FF7A00' },
+        { coords: [[34.0522, -118.2437], [33.4484, -112.0740]], color: '#FF7A00' },
+        { coords: [[49.2827, -123.1207], [47.6062, -122.3321]], color: '#FF7A00' },
+        { coords: [[51.0447, -114.0719], [53.5444, -113.4909]], color: '#FF7A00' },
+        { coords: [[51.0447, -114.0719], [43.6532, -79.3832]], color: '#FF7A00' },
       ];
 
       routes.forEach((route) => {

@@ -1,7 +1,7 @@
 :root {
   --navy: #071A33;
   --navy2: #0C2A52;
-  --blue: #0066FF;
+  --blue: #FF7A00;
   --orange: #FF7A00;
   --bg: #F8FAFC;
   --dark: #020617;
@@ -90,7 +90,7 @@ main > section {
 
 main > section#top {
   padding-top: clamp(6.25rem, 8vw, 7.5rem);
-  padding-bottom: clamp(3.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 main > section#top .hero-copy > .inline-flex {
@@ -112,6 +112,25 @@ main > section#top .hero-copy .mt-9 {
 
 main > section#top .hero-copy .mt-14 {
   margin-top: 2rem !important;
+}
+
+.hero-video-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: saturate(1.05) brightness(0.62);
+}
+
+main > section#top .max-w-7xl {
+  position: relative;
+  z-index: 1;
 }
 
 main > section#top .hero-visual .grid {
@@ -311,7 +330,7 @@ main section .rounded-2xl {
 }
 
 #navbar .bg-blue:hover {
-  background: #0057d9;
+  background: #E66E00;
 }
 
 #navbar .border-slate-200,
@@ -352,7 +371,7 @@ main section .rounded-2xl {
 .route-line::before {
   content: '';
   position: absolute;
-  border-left: 2px dashed rgba(0, 102, 255, 0.55);
+  border-left: 2px dashed rgba(255, 122, 0, 0.55);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -408,13 +427,13 @@ main section .rounded-2xl {
 
 @keyframes pulse-dot {
   0% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0.5);
   }
   70% {
-    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 8px rgba(255, 122, 0, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0);
   }
 }
 
@@ -454,7 +473,18 @@ main section .rounded-2xl {
 
 .card-hover:hover {
   transform: translateY(-6px);
+  border-color: rgba(255, 122, 0, 0.55) !important;
   box-shadow: 0 24px 48px -20px rgba(7, 26, 51, 0.25);
+}
+
+.box-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.box-hover:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 122, 0, 0.55) !important;
+  box-shadow: 0 18px 34px -20px rgba(7, 26, 51, 0.42);
 }
 
 .btn-shine {
@@ -507,9 +537,15 @@ main section .rounded-2xl {
 
 .marquee-track {
   display: flex;
+  align-items: center;
   gap: 3rem;
   width: max-content;
   animation: marquee 28s linear infinite;
+}
+
+.marquee-track span {
+  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 @keyframes marquee {
@@ -523,6 +559,11 @@ main section .rounded-2xl {
 
 input[type='range'] {
   accent-color: var(--blue);
+}
+
+/* Keep legacy blue utility classes on the orange secondary accent. */
+.hover\:bg-\[\#0052CC\]:hover {
+  background-color: var(--orange) !important;
 }
 
 .grad-navy {
