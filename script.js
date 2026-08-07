@@ -123,7 +123,7 @@
     counters.forEach((counter) => counterIO.observe(counter));
 
     const calcBtn = document.getElementById('calcBtn');
-    const quoteForm = document.getElementById('quoteForm');
+    const quoteForm = document.getElementById('quoteform');
     const formMsg = document.getElementById('formMsg');
     const weightInput = document.getElementById('weightInput')
       || quoteForm?.querySelector('input[placeholder^="Weight"]');
@@ -215,9 +215,20 @@
         preferCanvas: true,
       }).setView([49.5, -97.5], 3.5);
 
-      window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      const mapContainer = map.getContainer();
+      mapContainer.addEventListener('wheel', (event) => {
+        if (event.ctrlKey) {
+          map.scrollWheelZoom.enable();
+        } else {
+          map.scrollWheelZoom.disable();
+        }
+      }, { capture: true, passive: true });
+
+      window.L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 19,
-        attribution: '&copy; OpenStreetMap contributors',
+        subdomains: 'abcd',
+        detectRetina: true,
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
       }).addTo(map);
 
       const cities = [
@@ -240,6 +251,22 @@
         { name: 'Seattle, WA', coords: [47.6062, -122.3321] },
         { name: 'Calgary, AB', coords: [51.0447, -114.0719] },
         { name: 'Edmonton, AB', coords: [53.5444, -113.4909] },
+        { name: 'Winnipeg, MB', coords: [49.8951, -97.1384] },
+        { name: 'Regina, SK', coords: [50.4452, -104.6189] },
+        { name: 'Saskatoon, SK', coords: [52.1332, -106.6700] },
+        { name: 'Ottawa, ON', coords: [45.4215, -75.6972] },
+        { name: 'Quebec City, QC', coords: [46.8139, -71.2080] },
+        { name: 'Boston, MA', coords: [42.3601, -71.0589] },
+        { name: 'Washington, DC', coords: [38.9072, -77.0369] },
+        { name: 'Columbus, OH', coords: [39.9612, -82.9988] },
+        { name: 'Indianapolis, IN', coords: [39.7684, -86.1581] },
+        { name: 'Nashville, TN', coords: [36.1627, -86.7816] },
+        { name: 'Charlotte, NC', coords: [35.2271, -80.8431] },
+        { name: 'Minneapolis, MN', coords: [44.9778, -93.2650] },
+        { name: 'Houston, TX', coords: [29.7604, -95.3698] },
+        { name: 'San Antonio, TX', coords: [29.4241, -98.4936] },
+        { name: 'San Francisco, CA', coords: [37.7749, -122.4194] },
+        { name: 'Salt Lake City, UT', coords: [40.7608, -111.8910] },
       ];
 
       const routes = [
@@ -258,13 +285,37 @@
         { coords: [[49.2827, -123.1207], [47.6062, -122.3321]], color: '#FF7A00' },
         { coords: [[51.0447, -114.0719], [53.5444, -113.4909]], color: '#FF7A00' },
         { coords: [[51.0447, -114.0719], [43.6532, -79.3832]], color: '#FF7A00' },
+        { coords: [[44.6488, -63.5752], [45.5017, -73.5673], [43.6532, -79.3832]], color: '#FF7A00' },
+        { coords: [[45.5017, -73.5673], [42.3601, -71.0589], [40.7128, -74.0060]], color: '#FF7A00' },
+        { coords: [[40.7128, -74.0060], [39.9526, -75.1652], [38.9072, -77.0369]], color: '#FF7A00' },
+        { coords: [[43.6532, -79.3832], [42.3314, -83.0458], [41.4993, -81.6944]], color: '#FF7A00' },
+        { coords: [[41.8781, -87.6298], [41.4993, -81.6944], [40.7128, -74.0060]], color: '#FF7A00' },
+        { coords: [[32.7767, -96.7970], [29.7604, -95.3698], [29.4241, -98.4936]], color: '#FF7A00' },
+        { coords: [[33.7490, -84.3880], [30.2672, -97.7431], [32.7767, -96.7970]], color: '#FF7A00' },
+        { coords: [[34.0522, -118.2437], [36.1699, -115.1398], [33.4484, -112.0740]], color: '#FF7A00' },
+        { coords: [[47.6062, -122.3321], [45.5152, -122.6784], [39.7392, -104.9903]], color: '#FF7A00' },
+        { coords: [[51.0447, -114.0719], [49.2827, -123.1207], [47.6062, -122.3321]], color: '#FF7A00' },
+        { coords: [[43.6532, -79.3832], [42.3314, -83.0458], [39.7392, -104.9903]], color: '#FF7A00' },
+        { coords: [[53.5444, -113.4909], [52.1332, -106.6700], [50.4452, -104.6189], [49.8951, -97.1384]], color: '#FF7A00' },
+        { coords: [[49.8951, -97.1384], [44.9778, -93.2650], [41.8781, -87.6298]], color: '#FF7A00' },
+        { coords: [[49.8951, -97.1384], [43.6532, -79.3832]], color: '#FF7A00' },
+        { coords: [[46.8139, -71.2080], [45.5017, -73.5673], [45.4215, -75.6972]], color: '#FF7A00' },
+        { coords: [[45.4215, -75.6972], [43.6532, -79.3832], [42.3314, -83.0458]], color: '#FF7A00' },
+        { coords: [[39.9612, -82.9988], [39.7684, -86.1581], [41.8781, -87.6298]], color: '#FF7A00' },
+        { coords: [[39.7684, -86.1581], [36.1627, -86.7816], [33.7490, -84.3880]], color: '#FF7A00' },
+        { coords: [[38.9072, -77.0369], [35.2271, -80.8431], [33.7490, -84.3880]], color: '#FF7A00' },
+        { coords: [[40.7128, -74.0060], [38.9072, -77.0369], [35.2271, -80.8431]], color: '#FF7A00' },
+        { coords: [[39.7392, -104.9903], [40.7608, -111.8910], [37.7749, -122.4194]], color: '#FF7A00' },
+        { coords: [[29.7604, -95.3698], [29.4241, -98.4936], [32.7767, -96.7970]], color: '#FF7A00' },
+        { coords: [[36.1627, -86.7816], [29.7604, -95.3698]], color: '#FF7A00' },
+        { coords: [[37.7749, -122.4194], [34.0522, -118.2437], [32.7767, -96.7970]], color: '#FF7A00' },
       ];
 
       routes.forEach((route) => {
         window.L.polyline(route.coords, {
           color: route.color,
           weight: 2.2,
-          opacity: 0.75,
+          opacity: 0.7,
           lineCap: 'round',
           lineJoin: 'round',
         }).addTo(map);
@@ -275,7 +326,7 @@
           radius: 4.2,
           color: 'rgba(255,255,255,0.72)',
           weight: 1,
-          fillColor: '#FF7A00',
+          fillColor: '#3B82F6',
           fillOpacity: 0.95,
         }).addTo(map);
       });

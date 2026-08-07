@@ -76,6 +76,7 @@
             alt="BAK Freight logo"
             class="h-12 w-auto object-contain"
           />
+        </a>
 
         <nav class="hidden lg:flex items-center gap-8 font-medium text-[15px] text-slate-700">
           <a href="#services" class="hover:text-blue transition-colors">Services</a>
@@ -118,7 +119,7 @@
     <!-- =================== HERO =================== -->
     <section id="top" class="relative grad-navy route-grid overflow-hidden hero-section">
       <div class="hero-video-container pointer-events-none" aria-hidden="true">
-        <video class="hero-bg-video" autoplay muted loop playsinline>
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata">
           <source src="assets/videos/hero-video.mp4.mp4" type="video/mp4" />
           Your browser does not support HTML video.
         </video>
@@ -249,7 +250,7 @@
         </div>
 
         <div class="mt-12 grid lg:grid-cols-2 gap-10">
-          <div class="reveal in box-hover rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <div class="reveal in rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <span class="eyebrow uppercase text-blue">Freight Transportation</span>
             <h3 class="font-display font-800 text-2xl text-navy mt-4">First & Mid-Mile Transportation</h3>
             <p class="mt-4 text-slate-600 leading-relaxed">
@@ -309,7 +310,7 @@
             </a>
           </div>
 
-          <div class="reveal reveal-delay-1 in box-hover rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <div class="reveal reveal-delay-1 in rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <span class="eyebrow uppercase text-blue">Last-Mile Delivery</span>
             <h3 class="font-display font-800 text-2xl text-navy mt-4">EV Last-Mile Delivery</h3>
             <p class="mt-4 text-slate-600 leading-relaxed">
@@ -369,7 +370,7 @@
               </div>
             </div>
 
-            <a href="#lastmile-quote" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-blue px-6 py-3 text-sm font-semibold text-white hover:bg-[#0052CC] transition-colors">
+            <a href="#quoteform" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-blue px-6 py-3 text-sm font-semibold text-white hover:bg-[#0052CC] transition-colors">
               Schedule a Delivery <i data-lucide="arrow-right" class="h-4 w-4"></i>
             </a>
           </div>
@@ -573,11 +574,10 @@
 
         <div class="reveal reveal-delay-2 in">
           <div class="coverage-map-card rounded-[24px] border border-white/10 bg-[rgba(2,6,23,0.82)] p-3 shadow-2xl shadow-black/35">
-            <div id="coverageMap" class="h-[420px] min-h-[320px] w-full overflow-hidden rounded-[18px]"></div>
-            <div class="mt-3 flex flex-wrap items-center gap-4 text-[11px] font-mono uppercase tracking-[0.24em] text-white/55">
-              <span class="inline
-              -flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-blue"></span>freight lanes</span>
-              <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-orange"></span>key hubs</span>
+            <div id="coverageMap" class="h-[430px] min-h-[320px] w-full overflow-hidden rounded-[18px]" role="application" aria-label="BAK Freight active shipment lanes and logistics hubs across Canada and the United States"></div>
+            <div class="map-legend mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-[10px] font-mono uppercase tracking-[0.16em] text-white/65" aria-label="Map legend">
+              <span class="inline-flex items-center gap-2"><span class="map-legend-line"></span>active lanes</span>
+              <span class="inline-flex items-center gap-2"><span class="map-legend-dot"></span>network hubs</span>
             </div>
           </div>
         </div>
@@ -774,8 +774,8 @@
             <h3 class="font-display font-800 text-2xl md:text-3xl text-navy">Supporting Deliveries for Leading North American Brands</h3>
             <p class="mt-3 mx-auto max-w-2xl text-sm text-slate-500">Delivering reliable last-mile and logistics solutions for leading retail, furniture, and e-commerce brands across Canada and the USA.</p>
           </div>
-          <div class="overflow-hidden">
-            <div class="marquee-track text-slate-400 font-display font-800 text-xl md:text-2xl" aria-label="Brands supported by BAK Freight">
+          <div class="mt-10 md:mt-12 overflow-hidden">
+            <div class="marquee-track text-slate-400 font-display font-800 text-3xl md:text-4xl" aria-label="Brands supported by BAK Freight">
               <span>IKEA</span><span>AMAZON</span><span>PELOTON</span><span>CASPER</span><span>SLEEP COUNTRY</span><span>RONA</span><span>COSTCO WHOLESALE</span>
               <span>IKEA</span><span>AMAZON</span><span>PELOTON</span><span>CASPER</span><span>SLEEP COUNTRY</span><span>RONA</span><span>COSTCO WHOLESALE</span>
             </div>
@@ -796,7 +796,7 @@
         </div>
 
         <div class="mt-12 grid gap-8 lg:grid-cols-2">
-          <div class="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+          <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <div class="flex items-start gap-4">
               <div>
                 <span class="eyebrow uppercase text-blue">First & Mid-Mile | Cross-Border Transportation</span>
@@ -807,8 +807,7 @@
               Get an estimate for freight transportation across Canada and USA.
             </p>
 
-              <a id="quoteform" class="sr-only" aria-hidden="true"></a>
-              <form id="quoteForm" class="mt-8 grid gap-6">
+              <form id="quoteform" class="mt-8 grid gap-6">
               <div>
                 <label class="text-xs font-mono uppercase text-slate-500">Company Name</label>
                 <input
@@ -925,7 +924,7 @@
             </form>
           </div>
 
-          <div class="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1">
+          <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <div class="flex items-start gap-4">
               <div>
                 <span class="eyebrow uppercase text-blue">EV Delivery | Furniture | Large Packages</span>
@@ -1099,7 +1098,7 @@
     <!-- =================== CARRIERS / NEWSLETTER =================== -->
     <section id="carriers" class="py-20 md:py-24 bg-bg">
       <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10">
-        <div class="reveal in box-hover rounded-2xl bg-white border border-slate-200 p-8 md:p-10">
+        <div class="reveal in rounded-2xl bg-white border border-slate-200 p-8 md:p-10">
           <i data-lucide="steering-wheel" class="h-8 w-8 text-blue"></i>
           <h3 class="font-display font-800 text-2xl text-navy mt-5">Haul with BAK Freight</h3>
           <p class="mt-3 text-slate-600 leading-relaxed">
@@ -1115,7 +1114,7 @@
           </form>
         </div>
 
-        <div class="reveal reveal-delay-2 in box-hover rounded-2xl bg-navy p-8 md:p-10 flex flex-col justify-between">
+        <div class="reveal reveal-delay-2 in rounded-2xl bg-navy p-8 md:p-10 flex flex-col justify-between">
           <div>
             <i data-lucide="mail" class="h-8 w-8 text-orange"></i>
             <h3 class="font-display font-800 text-2xl text-white mt-5">Lane &amp; capacity updates</h3>
@@ -1271,8 +1270,8 @@
     <div class="max-w-7xl mx-auto px-5 md:px-8 mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
       <span>&copy; <span id="year"></span> BAK Freight. All rights reserved.</span>
       <div class="flex items-center gap-6">
-        <a href="#" class="hover:text-white">Privacy Policy</a>
-        <a href="#" class="hover:text-white">Terms of Service</a>
+        <span>Privacy Policy</span>
+        <span>Terms of Service</span>
       </div>
     </div>
   </footer>

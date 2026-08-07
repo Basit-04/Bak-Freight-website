@@ -16,8 +16,8 @@
   --space-8: 2rem;
   --space-10: 2.5rem;
   --space-12: 3rem;
-  --section-space: clamp(4.25rem, 6vw, 5.5rem);
-  --section-space-tight: clamp(3.25rem, 5vw, 4.25rem);
+  --section-space: clamp(3.25rem, 5vw, 4.5rem);
+  --section-space-tight: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 html {
@@ -31,6 +31,21 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(255, 122, 0, 0.55);
+  outline-offset: 3px;
 }
 
 p,
@@ -114,6 +129,16 @@ main > section#top .hero-copy .mt-14 {
   margin-top: 2rem !important;
 }
 
+main > section .mt-10,
+main > section .mt-12 {
+  margin-top: 2rem !important;
+}
+
+main > section .gap-14,
+main > section .gap-16 {
+  gap: 3rem !important;
+}
+
 .hero-video-container {
   position: absolute;
   inset: 0;
@@ -177,9 +202,22 @@ main section .rounded-2xl {
   backdrop-filter: blur(8px);
 }
 
+.map-legend-line {
+  width: 1.25rem;
+  border-top: 2px solid var(--orange);
+}
+
+.map-legend-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  background: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
 #coverageMap {
   min-height: 320px;
-  height: clamp(320px, 45vw, 430px);
+  height: clamp(320px, 45vw, 440px);
   background: linear-gradient(180deg, rgba(7, 26, 51, 0.98) 0%, rgba(4, 13, 25, 1) 100%);
 }
 
@@ -476,7 +514,6 @@ main section .rounded-2xl {
   border-color: rgba(255, 122, 0, 0.55) !important;
   box-shadow: 0 24px 48px -20px rgba(7, 26, 51, 0.25);
 }
-
 .box-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -527,25 +564,37 @@ main section .rounded-2xl {
   font-size: 0.72rem;
 }
 
-.map-dot {
-  fill: var(--orange);
-}
-
-.map-dot-pulse {
-  animation: pulse-dot 2.2s infinite;
-}
-
 .marquee-track {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 5.25rem;
   width: max-content;
   animation: marquee 28s linear infinite;
+  color: rgba(148, 163, 184, 0.3);
 }
 
 .marquee-track span {
   white-space: nowrap;
   letter-spacing: 0.02em;
+  color: var(--navy);
+  opacity: 0.78;
+  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.marquee-track span:hover {
+  color: var(--orange);
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .marquee-track {
+    gap: 3.25rem;
+  }
 }
 
 @keyframes marquee {
@@ -578,15 +627,66 @@ input[type='range'] {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.tab-active {
-  background: var(--navy);
-  color: #fff;
+.process-grid > div {
+  position: relative;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.route-line-card {
-  min-height: 420px;
+.process-grid > div:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 122, 0, 0.5);
+  box-shadow: 0 14px 26px -18px rgba(7, 26, 51, 0.45);
+}
+
+@media (min-width: 1024px) {
+  .process-grid > div:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -1.75rem;
+    width: 1.5rem;
+    border-top: 1px solid rgba(255, 122, 0, 0.45);
+  }
+}
+
+@media (max-width: 767px) {
+  .process-grid > div:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    height: 1.5rem;
+    border-left: 1px solid rgba(255, 122, 0, 0.45);
+  }
 }
 
 .ticket-second {
   animation-delay: 0.6s;
+}
+
+@media (max-width: 767px) {
+  main > section {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  main > section#top {
+    padding-top: 6rem;
+    padding-bottom: 2.5rem;
+  }
+
+  main > section#top .route-line-card {
+    min-height: 300px;
+  }
+
+  #coverageMap {
+    min-height: 320px;
+    height: 360px;
+  }
 }
