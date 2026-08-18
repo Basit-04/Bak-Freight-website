@@ -13,6 +13,7 @@
     content="freight company Canada, logistics company USA, cross border shipping, truck freight services, last mile delivery, dry van, reefer, flatbed, LTL shipping"
   />
   <link rel="canonical" href="https://www.bakfreight.com/" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="BAK Freight | Moving Freight. Building Trust. Delivering Results." />
@@ -92,6 +93,10 @@
           <a href="#tracking" class="btn-shine inline-flex items-center gap-2 bg-orange text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#E66E00] transition-colors">
             Track Shipment <i data-lucide="arrow-right" class="h-4 w-4"></i>
           </a>
+          <button id="languageToggle" type="button" class="language-toggle" aria-label="Switch to French" aria-pressed="false">
+            <span class="language-toggle-thumb" aria-hidden="true"></span>
+            <span class="language-toggle-label language-toggle-en">EN</span><span class="language-toggle-label language-toggle-fr">FR</span>
+          </button>
         </div>
 
         <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="lg:hidden p-2 text-navy">
@@ -103,6 +108,10 @@
     <!-- mobile menu -->
     <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-200 bg-white">
       <div class="px-5 py-4 flex flex-col gap-1 font-medium text-slate-700">
+        <button id="mobileLanguageToggle" type="button" class="language-toggle language-toggle-mobile" aria-label="Switch to French" aria-pressed="false">
+          <span class="language-toggle-thumb" aria-hidden="true"></span>
+          <span class="language-toggle-label language-toggle-en">EN</span><span class="language-toggle-label language-toggle-fr">FR</span>
+        </button>
         <a href="#services" class="py-3 border-b border-slate-100">Services</a>
         <a href="#industries" class="py-3 border-b border-slate-100">Industries</a>
         <a href="#technology" class="py-3 border-b border-slate-100">Technology</a>
@@ -136,7 +145,7 @@
           </div>
 
           <h1 class="font-display font-800 text-white leading-[1.04] text-4xl sm:text-5xl md:text-6xl tracking-tight">
-            Reliable Cross-Border Freight & Last-Mile Delivery Solutions
+Reliable Cross-Border Freight & Last-Mile Delivery Solutions
           </h1>
 
           <p class="mt-7 text-white/70 text-base leading-relaxed max-w-2xl">
@@ -383,7 +392,7 @@
           </p>
 
           <div class="feature-list mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-7">
-            <div class="flex gap-3.5">
+            <div class="feature-item flex gap-3.5">
               <div class="h-10 w-10 shrink-0 rounded-lg bg-blue/10 flex items-center justify-center">
                 <i data-lucide="radar" class="h-5 w-5 text-blue"></i>
               </div>
@@ -392,7 +401,7 @@
                 <p class="text-sm text-slate-600 mt-1">GPS visibility on every active load, down to the trailer.</p>
               </div>
             </div>
-            <div class="flex gap-3.5">
+            <div class="feature-item flex gap-3.5">
               <div class="h-10 w-10 shrink-0 rounded-lg bg-blue/10 flex items-center justify-center">
                 <i data-lucide="headset" class="h-5 w-5 text-blue"></i>
               </div>
@@ -401,7 +410,7 @@
                 <p class="text-sm text-slate-600 mt-1">One point of contact who owns your lane, not a queue.</p>
               </div>
             </div>
-            <div class="flex gap-3.5">
+            <div class="feature-item flex gap-3.5">
               <div class="h-10 w-10 shrink-0 rounded-lg bg-blue/10 flex items-center justify-center">
                 <i data-lucide="receipt" class="h-5 w-5 text-blue"></i>
               </div>
@@ -410,7 +419,7 @@
                 <p class="text-sm text-slate-600 mt-1">Rate confirmations with no hidden accessorials.</p>
               </div>
             </div>
-            <div class="flex gap-3.5">
+            <div class="feature-item flex gap-3.5">
               <div class="h-10 w-10 shrink-0 rounded-lg bg-orange/10 flex items-center justify-center">
                 <i data-lucide="message-circle" class="h-5 w-5 text-orange"></i>
               </div>
@@ -419,7 +428,7 @@
                 <p class="text-sm text-slate-600 mt-1">Status updates pushed proactively, not on request.</p>
               </div>
             </div>
-            <div class="flex gap-3.5">
+            <div class="feature-item flex gap-3.5">
               <div class="h-10 w-10 shrink-0 rounded-lg bg-blue/10 flex items-center justify-center">
                 <i data-lucide="shield-check" class="h-5 w-5 text-blue"></i>
               </div>
@@ -467,6 +476,20 @@
                   <span class="text-white text-sm font-medium">Load #48241 &middot; Vancouver → Seattle</span>
                 </div>
                 <span class="text-xs font-mono text-white/50">08%</span>
+              </div>
+              <div class="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                <div class="flex items-center gap-3">
+                  <i data-lucide="truck" class="h-4 w-4 text-sky-300"></i>
+                  <span class="text-white text-sm font-medium">Load #48245 &middot; Detroit → Toronto</span>
+                </div>
+                <span class="text-xs font-mono text-white/50">54%</span>
+              </div>
+              <div class="flex items-center justify-between bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                <div class="flex items-center gap-3">
+                  <i data-lucide="truck" class="h-4 w-4 text-emerald-300"></i>
+                  <span class="text-white text-sm font-medium">Load #48247 &middot; Calgary → Vancouver</span>
+                </div>
+                <span class="text-xs font-mono text-white/50">76%</span>
               </div>
             </div>
           </div>
@@ -561,6 +584,8 @@
             <div class="box-hover rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">Vancouver → Seattle</div>
             <div class="box-hover rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">Calgary → Toronto</div>
             <div class="box-hover rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">Mississauga → Atlanta</div>
+            <div class="box-hover rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">Toronto → Columbus → Atlanta</div>
+            <div class="box-hover rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">Vancouver → Calgary → Denver</div>
           </div>
         </div>
 
@@ -714,12 +739,17 @@
     <section class="py-20 md:py-24 bg-white border-y border-slate-100 overflow-hidden">
       <div class="max-w-7xl mx-auto px-5 md:px-8">
         <div class="max-w-2xl reveal in">
-          <span class="eyebrow uppercase text-blue">/ Shippers &amp; Partners</span>
-          <h2 class="font-display font-800 text-3xl md:text-4xl text-navy mt-3 tracking-tight">Trusted by teams who move freight for a living.</h2>
+          <span class="eyebrow uppercase text-blue">/ Testimonials</span>
+          <h2 class="testimonial-heading font-display font-800 text-3xl md:text-4xl text-navy mt-3 tracking-tight">Trusted by teams who move freight for a living.</h2>
         </div>
 
-        <div class="mt-10 grid md:grid-cols-3 gap-6">
-          <div class="reveal in box-hover rounded-2xl bg-bg border border-slate-200 p-7">
+        <div class="testimonial-carousel mt-10 reveal in">
+          <button id="testimonialPrev" class="testimonial-arrow" type="button" aria-label="Previous testimonials" title="Previous testimonials">
+            <i data-lucide="arrow-left" class="h-5 w-5"></i>
+          </button>
+          <div class="testimonial-viewport">
+            <div id="testimonialTrack" class="testimonial-track">
+          <article class="testimonial-card box-hover rounded-2xl bg-bg border border-slate-200 p-7">
             <div class="flex gap-1 text-orange mb-4">★★★★★</div>
             <p class="text-slate-700 leading-relaxed text-[15px]">
               Our dispatcher knows our lanes better than we do at this point. Tracking updates come before we even think to ask.
@@ -731,8 +761,8 @@
                 <div class="text-xs text-slate-500">Ops Director, Northline Foods</div>
               </div>
             </div>
-          </div>
-          <div class="reveal reveal-delay-1 in box-hover rounded-2xl bg-bg border border-slate-200 p-7">
+          </article>
+          <article class="testimonial-card box-hover rounded-2xl bg-bg border border-slate-200 p-7">
             <div class="flex gap-1 text-orange mb-4">★★★★★</div>
             <p class="text-slate-700 leading-relaxed text-[15px]">
               Cross-border used to be our biggest headache. BAK's paperwork is clean every time — zero PARS delays in eight months.
@@ -744,8 +774,8 @@
                 <div class="text-xs text-slate-500">Supply Chain Lead, Carden Retail</div>
               </div>
             </div>
-          </div>
-          <div class="reveal reveal-delay-2 in box-hover rounded-2xl bg-bg border border-slate-200 p-7">
+          </article>
+          <article class="testimonial-card box-hover rounded-2xl bg-bg border border-slate-200 p-7">
             <div class="flex gap-1 text-orange mb-4">★★★★★</div>
             <p class="text-slate-700 leading-relaxed text-[15px]">
               The portal alone would have sold us. Being able to see live GPS on flatbed loads changed how we plan our yard.
@@ -757,19 +787,69 @@
                 <div class="text-xs text-slate-500">Plant Manager, Meridian Steel</div>
               </div>
             </div>
+          </article>
+          <article class="testimonial-card box-hover rounded-2xl bg-bg border border-slate-200 p-7">
+            <div class="flex gap-1 text-orange mb-4">★★★★★</div>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              Since adding BAK to our regional lanes, missed appointments dropped immediately. The team keeps our customers informed before issues become escalations.
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-navy text-white flex items-center justify-center font-display font-700 text-sm">MC</div>
+              <div>
+                <div class="text-sm font-semibold text-navy">M. Chen</div>
+                <div class="text-xs text-slate-500">Logistics Manager, Atlas Home</div>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card box-hover rounded-2xl bg-bg border border-slate-200 p-7">
+            <div class="flex gap-1 text-orange mb-4">★★★★★</div>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              Cross-border paperwork is clear, proactive, and consistently ready before pickup. That reliability has made planning our Ontario lanes much easier.
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-navy text-white flex items-center justify-center font-display font-700 text-sm">KW</div>
+              <div>
+                <div class="text-sm font-semibold text-navy">K. Wilson</div>
+                <div class="text-xs text-slate-500">Transportation Lead, Prairie Supply</div>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial-card box-hover rounded-2xl bg-bg border border-slate-200 p-7">
+            <div class="flex gap-1 text-orange mb-4">★★★★★</div>
+            <p class="text-slate-700 leading-relaxed text-[15px]">
+              BAK gives our team the visibility we need without making us chase updates. Every delivery arrives with a clear status and signed proof.
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-navy text-white flex items-center justify-center font-display font-700 text-sm">DP</div>
+              <div>
+                <div class="text-sm font-semibold text-navy">D. Patel</div>
+                <div class="text-xs text-slate-500">Operations Manager, Northstar Commerce</div>
+              </div>
+            </div>
+          </article>
+            </div>
           </div>
+          <button id="testimonialNext" class="testimonial-arrow" type="button" aria-label="Next testimonials" title="Next testimonials">
+            <i data-lucide="arrow-right" class="h-5 w-5"></i>
+          </button>
         </div>
 
-        <div class="mt-10 reveal reveal-delay-3 in">
+      </div>
+    </section>
+
+    <!-- =================== BRANDS =================== -->
+    <section id="brands" class="py-16 md:py-20 bg-bg border-b border-slate-100 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+        <div class="reveal reveal-delay-3 in">
           <div class="text-center">
             <div class="eyebrow uppercase text-orange mb-2">/ Brands We Support</div>
             <h3 class="font-display font-800 text-2xl md:text-3xl text-navy">Supporting Deliveries for Leading North American Brands</h3>
             <p class="mt-3 mx-auto max-w-2xl text-sm text-slate-500">Delivering reliable last-mile and logistics solutions for leading retail, furniture, and e-commerce brands across Canada and the USA.</p>
           </div>
           <div class="mt-10 md:mt-12 overflow-hidden">
-            <div class="marquee-track text-slate-400 font-display font-800 text-3xl md:text-4xl" aria-label="Brands supported by BAK Freight">
-              <span>IKEA</span><span>AMAZON</span><span>PELOTON</span><span>CASPER</span><span>SLEEP COUNTRY</span><span>RONA</span><span>COSTCO WHOLESALE</span>
-              <span>IKEA</span><span>AMAZON</span><span>PELOTON</span><span>CASPER</span><span>SLEEP COUNTRY</span><span>RONA</span><span>COSTCO WHOLESALE</span>
+            <div class="marquee-track brands-marquee text-navy font-display font-extrabold text-3xl md:text-4xl" aria-label="Brands supported by BAK Freight">
+              <img src="assets/IKEA-clean.png" alt="IKEA" /><img src="assets/Amazon.png" alt="Amazon" /><img src="assets/Peloton.png" alt="Peloton" /><img src="assets/Casper%20Mattress.png" alt="Casper" /><img src="assets/Sleep%20Country.png" alt="Sleep Country" /><img src="assets/Rona.png" alt="RONA" /><img src="assets/COSTCO%20WHOLESALE.png" alt="Costco Wholesale" /><img src="assets/DWR%20.png" alt="DWR" />
+              <img src="assets/IKEA-clean.png" alt="IKEA" /><img src="assets/Amazon.png" alt="Amazon" /><img src="assets/Peloton.png" alt="Peloton" /><img src="assets/Casper%20Mattress.png" alt="Casper" /><img src="assets/Sleep%20Country.png" alt="Sleep Country" /><img src="assets/Rona.png" alt="RONA" /><img src="assets/COSTCO%20WHOLESALE.png" alt="Costco Wholesale" /><img src="assets/DWR%20.png" alt="DWR" />
             </div>
           </div>
         </div>
@@ -787,7 +867,7 @@
           </p>
         </div>
 
-        <div class="mt-12 grid gap-8 lg:grid-cols-2">
+        <div class="mt-12 grid items-start gap-8 lg:grid-cols-2">
           <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <div class="flex items-start gap-4">
               <div>
@@ -833,53 +913,94 @@
 
               <div>
                 <label class="text-xs font-mono uppercase text-slate-500">Phone</label>
-                <input
-                  required
-                  type="tel"
-                  placeholder="(555) 555-5555"
-                  class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
-                />
+                <div class="phone-input-group mt-2">
+                  <div id="freightPhoneCountry" class="phone-country-picker">
+                    <button id="freightPhoneCountryButton" class="phone-country" type="button" aria-label="Select phone country" aria-expanded="false" aria-haspopup="listbox">
+                      <span class="flag-icon flag-canada" aria-hidden="true"></span><span class="country-short">CA</span><span>+1</span><i data-lucide="chevron-down" class="h-3.5 w-3.5" aria-hidden="true"></i>
+                    </button>
+                    <div id="freightPhoneCountryMenu" class="phone-country-menu hidden" role="listbox">
+                      <button class="phone-country-option" type="button" data-country="canada" data-short="CA" role="option"><span class="flag-icon flag-canada" aria-hidden="true"></span><span class="country-short">CA</span><span>+1</span><span class="sr-only">Canada</span></button>
+                      <button class="phone-country-option" type="button" data-country="united-states" data-short="US" role="option"><span class="flag-icon flag-united-states" aria-hidden="true"></span><span class="country-short">US</span><span>+1</span><span class="sr-only">United States</span></button>
+                    </div>
+                  </div>
+                  <input
+                    required
+                    id="freightPhone"
+                    type="tel"
+                    inputmode="tel"
+                    placeholder="(555) 555-5555"
+                    class="phone-number"
+                  />
+                </div>
               </div>
 
               <div>
                 <label class="text-xs font-mono uppercase text-slate-500">Shipment Type</label>
-                <select class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue">
-                  <option>FTL — Full Truckload</option>
-                  <option>LTL — Less Than Truckload</option>
-                  <option>Reefer</option>
-                  <option>Flatbed</option>
-                  <option>Drayage</option>
-                  <option>Cross-Border Freight</option>
+                <select required id="freightType" class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue">
+                  <option value="" selected disabled>Select shipment type</option>
+                  <option value="1.12">FTL — Full Truckload</option>
+                  <option value="1.0">LTL — Less Than Truckload</option>
+                  <option value="1.2">Reefer</option>
+                  <option value="1.16">Flatbed</option>
+                  <option value="1.08">Drayage</option>
+                  <option value="1.24">Cross-Border Freight</option>
                 </select>
               </div>
 
-              <div class="grid gap-6 md:grid-cols-2">
+              <div class="location-pair-grid">
                 <div>
                   <label class="text-xs font-mono uppercase text-slate-500">Origin Location</label>
-                  <input
-                    required
-                    type="text"
-                    placeholder="City, Province/State"
-                    class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
-                  />
+                  <div class="location-select-row mt-2">
+                    <select required id="originCountry" class="location-select" aria-label="Origin country">
+                      <option value="" selected disabled>Select country</option>
+                      <option value="Canada">Canada</option>
+                      <option value="United States">United States</option>
+                    </select>
+                    <select required id="originRegion" class="location-select" aria-label="Origin province or state" disabled>
+                      <option value="" selected disabled>Select province or state</option>
+                    </select>
+                  </div>
+                  <input required id="originAddress" class="location-address mt-2" type="text" aria-label="Origin address" placeholder="Address, city, province/state, postal/ZIP code" />
                 </div>
                 <div>
                   <label class="text-xs font-mono uppercase text-slate-500">Destination Location</label>
-                  <input
-                    required
-                    type="text"
-                    placeholder="City, Province/State"
-                    class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
-                  />
+                  <div class="location-select-row mt-2">
+                    <select required id="destinationCountry" class="location-select" aria-label="Destination country">
+                      <option value="" selected disabled>Select country</option>
+                      <option value="Canada">Canada</option>
+                      <option value="United States">United States</option>
+                    </select>
+                    <select required id="destinationRegion" class="location-select" aria-label="Destination province or state" disabled>
+                      <option value="" selected disabled>Select province or state</option>
+                    </select>
+                  </div>
+                  <input required id="destinationAddress" class="location-address mt-2" type="text" aria-label="Destination address" placeholder="Address, city, province/state, postal/ZIP code" />
                 </div>
               </div>
 
               <div>
                 <label class="text-xs font-mono uppercase text-slate-500">Load Details</label>
+                <div class="weight-input-group mt-2">
+                  <input
+                    required
+                    type="number"
+                    id="weightInput"
+                    min="0"
+                    step="any"
+                    inputmode="decimal"
+                    placeholder="Weight"
+                    class="weight-number"
+                  />
+                  <select required id="weightUnit" class="weight-unit" aria-label="Weight unit">
+                    <option value="lbs" selected>lbs</option>
+                    <option value="kg">kg</option>
+                  </select>
+                </div>
                 <input
                   required
                   type="text"
-                  placeholder="Weight, dimensions, equipment needs"
+                  id="dimensionsInput"
+                  placeholder="Dimensions and equipment details"
                   class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
                 />
               </div>
@@ -888,6 +1009,7 @@
                 <label class="text-xs font-mono uppercase text-slate-500">Pickup Date</label>
                 <input
                   required
+                  id="pickupDate"
                   type="date"
                   class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
                 />
@@ -924,7 +1046,7 @@
               </div>
             </div>
             <p class="mt-5 text-slate-600 leading-relaxed">
-              Tell us about your delivery requirements and our team will respond quickly.
+              Tell us about your delivery requirements, and our team will respond quickly with the right delivery solution for your needs across Canada.
             </p>
 
             <form id="lastMileForm" class="mt-8 grid gap-6">
@@ -961,17 +1083,23 @@
 
               <div>
                 <label class="text-xs font-mono uppercase text-slate-500">Phone</label>
-                <input
-                  required
-                  type="tel"
-                  placeholder="(555) 555-5555"
-                  class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
-                />
+                <div class="phone-input-group mt-2">
+                  <span class="phone-prefix" aria-label="Canada +1"><span class="flag-icon flag-canada" aria-hidden="true"></span><span>+1</span></span>
+                  <input
+                    required
+                    id="lastMilePhone"
+                    type="tel"
+                    inputmode="tel"
+                    placeholder="(555) 555-5555"
+                    class="phone-number"
+                  />
+                </div>
               </div>
 
               <div>
                 <label class="text-xs font-mono uppercase text-slate-500">Delivery Type</label>
-                <select class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue">
+                <select required class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue">
+                  <option value="" selected disabled>Select delivery type</option>
                   <option>Furniture Delivery</option>
                   <option>Large Package Delivery</option>
                   <option>Retail Delivery</option>
@@ -979,40 +1107,58 @@
                 </select>
               </div>
 
-              <div class="grid gap-6 md:grid-cols-2">
+              <div class="location-pair-grid">
                 <div>
-                  <label class="text-xs font-mono uppercase text-slate-500">Pickup Location</label>
-                  <input
-                    required
-                    type="text"
-                    placeholder="City, Province/State"
-                    class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
-                  />
+                  <label class="text-xs font-mono uppercase text-slate-500">Origin Location</label>
+                  <div class="location-select-row mt-2">
+                    <select required id="lastOriginCountry" class="location-select" aria-label="Origin country">
+                      <option value="Canada" selected>Canada</option>
+                    </select>
+                    <select required id="lastOriginRegion" class="location-select" aria-label="Origin province or state">
+                      <option value="" selected disabled>Select province or state</option>
+                    </select>
+                  </div>
+                  <input required id="lastOriginAddress" class="location-address mt-2" type="text" aria-label="Origin address" placeholder="Address, city, province/state, postal code" />
                 </div>
                 <div>
-                  <label class="text-xs font-mono uppercase text-slate-500">Delivery Location</label>
-                  <input
-                    required
-                    type="text"
-                    placeholder="City, Province/State"
-                    class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
-                  />
+                  <label class="text-xs font-mono uppercase text-slate-500">Destination Location</label>
+                  <div class="location-select-row mt-2">
+                    <select required id="lastDestinationCountry" class="location-select" aria-label="Destination country">
+                      <option value="Canada" selected>Canada</option>
+                    </select>
+                    <select required id="lastDestinationRegion" class="location-select" aria-label="Destination province or state">
+                      <option value="" selected disabled>Select province or state</option>
+                    </select>
+                  </div>
+                  <input required id="lastDestinationAddress" class="location-address mt-2" type="text" aria-label="Destination address" placeholder="Address, city, province/state, postal code" />
                 </div>
               </div>
 
               <div>
                 <label class="text-xs font-mono uppercase text-slate-500">Delivery Schedule</label>
-                <input
-                  required
-                  type="text"
-                  placeholder="Preferred date / time window"
-                  class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
-                />
+                <div class="delivery-schedule-fields mt-2">
+                  <input
+                    required
+                    id="lastMileDate"
+                    type="date"
+                    aria-label="Delivery date"
+                    class="rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
+                  />
+                  <input
+                    required
+                    id="lastMileTime"
+                    type="time"
+                    step="1800"
+                    aria-label="Approximate delivery time"
+                    class="rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue"
+                  />
+                </div>
               </div>
 
               <div>
                 <label class="text-xs font-mono uppercase text-slate-500">Special Requirements</label>
                 <textarea
+                  required
                   rows="4"
                   placeholder="Assembly, access details, item handling notes"
                   class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-blue resize-none"
@@ -1045,19 +1191,39 @@
         <p class="mt-4 text-white/60">Enter your BAK waybill number to see live status.</p>
 
         <form id="trackForm" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-          <input
-            id="trackInput"
-            type="text"
-            placeholder="e.g. BAK-48213-DV"
-            class="flex-1 rounded-lg px-5 py-3.5 text-sm bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue"
-          />
+          <div class="tracking-input-group flex-1">
+            <span class="tracking-prefix" aria-hidden="true">BAK-</span>
+            <input
+              id="trackDateCode"
+              type="text"
+              autocomplete="off"
+              inputmode="numeric"
+              maxlength="4"
+              placeholder="0826"
+              aria-label="Tracking month and year, four digits"
+              class="tracking-part tracking-date-code"
+            />
+            <span class="tracking-separator" aria-hidden="true">-</span>
+            <input
+              id="trackGenericId"
+              type="text"
+              autocomplete="off"
+              inputmode="numeric"
+              maxlength="6"
+              placeholder="482133"
+              aria-label="Tracking generic ID, six digits"
+              class="tracking-part tracking-generic-id"
+            />
+          </div>
           <button
+            id="trackSubmit"
             type="submit"
             class="btn-shine inline-flex items-center justify-center gap-2 bg-blue text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-[#0052CC] transition-colors"
           >
             Track <i data-lucide="search" class="h-4 w-4"></i>
           </button>
         </form>
+        <p id="trackError" class="hidden mt-3 text-sm text-red-300" role="alert">Please enter a valid BAK tracking number in the format BAK-0826-482133.</p>
 
         <div id="trackResult" class="hidden mt-8 ticket relative rounded-2xl px-6 py-6 text-left max-w-lg mx-auto">
           <div class="flex items-center justify-between mb-4">
@@ -1092,26 +1258,36 @@
       <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10">
         <div class="reveal in rounded-2xl bg-white border border-slate-200 p-8 md:p-10">
           <i data-lucide="steering-wheel" class="h-8 w-8 text-blue"></i>
-          <h3 class="font-display font-800 text-2xl text-navy mt-5">Haul with BAK Freight</h3>
+          <h3 class="font-display font-800 text-2xl text-navy mt-5">Partner with BAK Freight</h3>
           <p class="mt-3 text-slate-600 leading-relaxed">
-            Consistent freight, fast settlement, and a dispatch team that treats your truck like it's their own.
+            Looking for reliable freight opportunities? Submit your carrier details and our team will review your information for available loads and lanes.
           </p>
-          <form class="mt-6 grid sm:grid-cols-2 gap-4">
-            <input required placeholder="Carrier / MC Number" class="rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue" />
-            <input required placeholder="Equipment Type" class="rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue" />
-            <input required type="email" placeholder="Email" class="sm:col-span-2 rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue" />
+          <form id="carrierForm" class="mt-6 grid sm:grid-cols-2 gap-4">
+            <input required id="carrierMcNumber" placeholder="Enter your MC number" aria-label="Carrier / MC Number" class="rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue" />
+            <select required id="carrierEquipment" aria-label="Equipment Type" class="rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue">
+              <option value="" selected disabled>Select truck type</option>
+              <option>Dry Van</option>
+              <option>Reefer</option>
+              <option>Flatbed</option>
+              <option>Box Truck</option>
+              <option>Straight Truck</option>
+              <option>Sprinter Van</option>
+              <option>Other</option>
+            </select>
+            <input required id="carrierEmail" type="email" placeholder="you@company.com" aria-label="Email Address" class="sm:col-span-2 rounded-lg border border-slate-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue" />
             <button type="submit" class="sm:col-span-2 bg-navy text-white font-semibold px-6 py-3 rounded-lg hover:bg-navy2 transition-colors">
-              Apply To Haul
+              Submit Carrier Information
             </button>
           </form>
+          <p class="mt-4 text-xs text-slate-500 leading-relaxed">Carrier information is reviewed by our operations team. Submission does not guarantee load availability.</p>
         </div>
 
         <div class="reveal reveal-delay-2 in rounded-2xl bg-navy p-8 md:p-10 flex flex-col justify-between">
           <div>
             <i data-lucide="mail" class="h-8 w-8 text-orange"></i>
-            <h3 class="font-display font-800 text-2xl text-white mt-5">Lane &amp; capacity updates</h3>
+            <h3 class="font-display font-800 text-2xl text-white mt-5">Freight &amp; Lane Updates</h3>
             <p class="mt-3 text-white/60 leading-relaxed">
-              Monthly notes on freight conditions, new lanes, and network capacity — no spam.
+              Stay informed about new lanes, network capacity, and important freight updates from BAK Freight.
             </p>
           </div>
           <form id="newsForm" class="mt-6 flex flex-col sm:flex-row gap-3">
@@ -1125,7 +1301,8 @@
               Subscribe
             </button>
           </form>
-          <p id="newsMsg" class="hidden text-emerald-300 text-sm mt-3">Subscribed — welcome aboard.</p>
+          <p class="mt-3 text-xs text-white/50">Occasional logistics updates. No spam.</p>
+          <p id="newsMsg" class="hidden text-emerald-300 text-sm mt-3">Subscription confirmed.</p>
         </div>
       </div>
     </section>
@@ -1181,7 +1358,7 @@
           </div>
         </div>
 
-        <div class="mt-6 box-hover overflow-hidden rounded-3xl border border-slate-200 bg-bg">
+        <div class="mt-6 overflow-hidden rounded-3xl border border-slate-200 bg-bg">
           <iframe title="BAK Freight Mississauga headquarters map" src="https://www.google.com/maps?q=203-3033+Palstan+Rd,+Mississauga,+Ontario+L4Y+4E7,+Canada&amp;output=embed" class="h-80 w-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
@@ -1267,6 +1444,24 @@
       </div>
     </div>
   </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top" aria-hidden="true">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <aside id="recentBookingNotification" class="recent-booking-notification hidden" aria-live="polite" aria-hidden="true">
+    <div class="recent-booking-card">
+      <div class="recent-booking-icon" aria-hidden="true"><i data-lucide="truck" class="h-4 w-4"></i></div>
+      <div class="recent-booking-copy">
+        <div class="recent-booking-label">Recent activity</div>
+        <p id="recentBookingTitle" class="recent-booking-title"></p>
+        <p id="recentBookingLane" class="recent-booking-lane"></p>
+        <span id="recentBookingTime" class="recent-booking-time"></span>
+      </div>
+      <button id="recentBookingClose" class="recent-booking-close" type="button" aria-label="Close recent activity" title="Close recent activity">×</button>
+      <div class="recent-booking-progress" aria-hidden="true"><span id="recentBookingProgress"></span></div>
+    </div>
+  </aside>
 
 </body>
 </html>
