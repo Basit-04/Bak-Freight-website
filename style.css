@@ -1373,6 +1373,10 @@ main section .rounded-2xl {
 }
 
 @media (max-width: 767px) {
+  html,
+  body,
+  #navbar,
+  #mobileMenu,
   main,
   main > section,
   footer {
